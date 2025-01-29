@@ -13,7 +13,7 @@ jobs:
             - uses: actions/upload-artifact@v4
               with:
                 name: dragon-artifact
-                path: ubuntu/
+                path: /ubuntu/
     deploy:
         needs: build
         runs-on: ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
             - uses: actions/download-artifact@v4
               with:
                 name: dragon-artifact
-                path: ubuntu/
+                path: /ubuntu/
             - name: show file
-              run: cat ubuntu/dragon-artifact
+              run: cat /ubuntu/dragon-artifact
             
