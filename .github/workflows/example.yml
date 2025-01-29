@@ -13,14 +13,15 @@ jobs:
             - uses: actions/upload-artifact@v4
               with:
                 name: dragon-artifact
-                path: dragon.txt
+                path: ubuntu/
     deploy:
         needs: build
         runs-on: ubuntu-latest
         steps:
-            - name: show file
-              run: cat dragon.txt
             - uses: actions/download-artifact@v4
               with:
                 name: dragon-artifact
-                path: path/to/artifact/world.txt
+                path: ubuntu/
+            - name: show file
+              run: cat ubuntu/dragon-artifact
+            
